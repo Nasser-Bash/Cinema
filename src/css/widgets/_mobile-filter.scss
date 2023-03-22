@@ -1,0 +1,26 @@
+.mobile-filter{
+    transition: all .3s ease-in;
+    overflow-y: auto;
+    @extend %border;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    left: -350px;
+    height: 100%;
+    z-index: 10;
+    @extend %gradiantColor;
+    &.active{
+        left: 0;
+    }
+   .dropdown-menu{
+        @extend  %gradiantColor;
+        color: $textcolor;
+        overflow-y: scroll;
+        height: 200px;
+        .form-check-input:checked {
+            background-color: $fourthcolor;
+            border-color: $maincolor;
+        }
+   }
+}

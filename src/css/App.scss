@@ -1,0 +1,77 @@
+$maincolor:#212529;
+$thirdcolor:#c292de;
+$fourthcolor:#95a3e0;
+$textcolor:white;
+$secondtextcolor:grey;
+%gradiantColor{
+ background: rgb(37,42,61);
+background: linear-gradient(90deg, rgba(37,42,61,1) 0%, rgba(33,37,41,1) 100%);
+}
+%HovertColor{
+  background: $fourthcolor !important;
+}
+%border{
+ border-bottom: 2px solid $fourthcolor;
+
+}
+%borderReverse{
+  border: 2px solid $thirdcolor;
+ border-radius: 25px;
+}
+button{
+  background: $fourthcolor !important;
+  border: none ;
+  &:hover{
+    @extend %HovertColor;
+  }
+}
+// import layout css files 
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/loader";
+// import pages css files 
+@import "./pages/movie-detailes";
+@import "./pages/home";
+// import widgets css files 
+@import "./widgets/menu";
+@import "./widgets/hero-section";
+@import "./widgets/FeauterdMovies";
+@import "./widgets/moviesSlider";
+@import "./widgets/moviesSliderTwo";
+@import "./widgets/pagintaion";
+@import "./widgets/moviesCard";
+@import "./widgets/moviesCard2";
+@import "./widgets/mobile-filter";
+body{
+  @extend %gradiantColor;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.MuiMenu-list{
+  @extend %gradiantColor;
+}
+ .MuiSelect-select{
+  color: $textcolor !important;
+ }
+// .loading{
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 2px;
+//   background-color: $thirdcolor;
+// }
+.rate-icon{
+  color: yellow !important;
+}
+a{
+  color: $textcolor !important;
+  transition: all 0.3s ease-in;
+  &:hover{
+    color: $secondtextcolor !important;
+  }
+}

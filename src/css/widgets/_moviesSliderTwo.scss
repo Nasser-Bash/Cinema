@@ -1,0 +1,14 @@
+.swiper-css-mode{
+  height: 600px;
+ 
+    .swiper-wrapper{
+        .swiper-slide{
+            position: relative;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .swiper-css-mode {
+        height:  700px;
+    }
+  }

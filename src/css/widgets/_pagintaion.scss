@@ -1,0 +1,23 @@
+.pagination{
+    .page{
+           .page-link{
+            color: $textcolor;
+            background-color: $maincolor;
+            @extend %border;
+            transition: all .3 ease;
+            font-size: 12px;
+            &:hover{
+                background-color: $fourthcolor;
+                color: $maincolor;
+            }
+            &.active{
+                background-color: $fourthcolor;
+                color: $maincolor;
+                @extend %border;
+            }
+           }
+          &.disabled{
+            cursor:no-drop;
+          }
+    }
+}

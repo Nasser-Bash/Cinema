@@ -1,0 +1,68 @@
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    .navbar-brand {
+        img {
+            width: 200px;
+        }
+    }
+
+    &.active-navbar {
+        @extend %gradiantColor;
+        
+    }
+    .MuiFormControl-root {
+        label {
+            color: white;
+        }
+    
+        select {
+            color: white;
+        }
+    
+        .MuiInput-underline:before {
+            border-color: $fourthcolor;
+        }
+    
+        .MuiInput-underline:after {
+            border-color: $thirdcolor;
+        }
+    
+        &:hover .MuiInput-underline:before {
+            border-color: $fourthcolor;
+        }
+    }
+}
+.search-Header {
+    @extend %gradiantColor;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    .MuiFormControl-root {
+        label {
+            color: white;
+        }
+    
+        input {
+            color: white;
+        }
+    
+        .MuiInput-underline:before {
+            border-color: $fourthcolor;
+        }
+    
+        .MuiInput-underline:after {
+            border-color: $thirdcolor;
+        }
+    
+        &:hover .MuiInput-underline:before {
+            border-color: $fourthcolor;
+        }
+    }
+}

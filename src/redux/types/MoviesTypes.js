@@ -1,0 +1,13 @@
+export const AllMovies = "AllMovies";
+export const MoviesTypes = "MoviesTypes";
+export const Search = "Search";
+export const Paginate = "Paginate";
+export const Geners = "Geners";
+export const Filter = "Filter";
+export const Details = "Details";
+export const Casting = "Casting";
+export const Videos = "Videos";
+export const Similar = "Similar";
+export const NowPlaying = "NowPlaying";
+export const TopRated = "TopRated";
+export const Trending = "Trending";

@@ -1,0 +1,106 @@
+.card-movie{
+    width: 100%;
+    position: relative;
+    height: 280px;
+    border-radius: 10px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .2s;
+    }
+    overflow: hidden;
+    .sub-detailes{      
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+         background-color: rgb(0, 0, 0);
+        opacity: 0;
+       visibility: hidden;
+       color: $maincolor;
+       .detailes{
+            left: 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        .movie-play{
+            font-size: 40px;
+            position: absolute;
+            left: 40%;
+            top: 35%;
+             color: $fourthcolor;
+           }
+           .movie-title{
+                font-size: 1em;
+                font-weight: 900;
+                color: $textcolor;
+                position: absolute;
+                left:0;
+                top: 55%;
+                width: 100%;
+
+           }
+           .movie-rate{
+            position: absolute;
+            width: 35px;
+            height: 50px;
+            top: 0;
+            left: 0;
+            background-color: yellow;
+            color: $secondtextcolor;
+            font-weight: 900;
+            .rate-icon{
+                color: $maincolor !important;
+              }
+           }
+       }
+    }
+    &:hover img{
+        transform: scale(1.3);
+    }
+&:hover  .sub-detailes{
+    visibility: visible;
+    
+    -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+}
+@-webkit-keyframes rotateInDownRight {
+    0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 0.5;
+    }
+    }
+    @keyframes rotateInDownRight {
+    0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 0.7;
+    }
+    } 
