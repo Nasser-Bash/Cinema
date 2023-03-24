@@ -10,8 +10,9 @@ import { getmoviedetaile , getmoviecast , getsimilar , getvideos } from "../../r
 import { api } from "../API";
 import { SearchContext } from "../../App";
 import Zoom from 'react-reveal/Zoom';
-import Footer from "../Layout/Footer";
+import ReactPlayer from 'react-player'
 function MovieDetalies({searchview}) {
+  const [Istutorail, setIstutorail] = useState();
   const id = useParams();
   const applang = useSelector((state)=>state.languages.lang);
   const { t, i18n } = useTranslation();
@@ -20,11 +21,33 @@ function MovieDetalies({searchview}) {
   const Dispatch = useDispatch();
   const gettutorailvideos = async (movievideos)=>{
     const tutorailvideos = movievideos.filter((video)=>video.type==="Trailer");                                                  
-    setvideokey(tutorailvideos[0].key);
+      if(tutorailvideos.length ===0){
+         setIstutorail(false);
+      }else{
+        setvideokey(tutorailvideos[0].key);
+        setIstutorail(true);
+      }
      }
-     const [background, setbackground] = useState(true);
+     const [videobackground, setbackground] = useState(false);
      const changeBackground = ()=>{
-            setbackground(false)
+      if(Istutorail==true){
+      setbackground(true)
+      return(
+         
+            <ReactPlayer 
+              width="420" 
+              height="315" 
+              autoPlay={true}
+              className='movie-tutorail'
+              url={`https://www.youtube.com/embed/${videokey}`} />
+             
+           ) 
+       }else{
+        return (
+          <img  className='movie-tutorail' src=
+          {api.Image + moviedetails.backdrop_path }/>
+        )
+       }
      }
      const moviedetails = useSelector((state)=>state.details.details);
      const moviecast = useSelector((state)=>state.casting.cast);
@@ -32,17 +55,23 @@ function MovieDetalies({searchview}) {
      const similarmovie = useSelector((state)=>state.similar.similar);
   useEffect(() => {
     Dispatch(getmoviedetaile(applang,id.Movieid))
-    //  postreviews();
-     setInterval(() => {
-      changeBackground()
-    }, 5000);
-  }, [moviedetails]);
+    
+  }, [moviedetails,id.Movieid]);
+  // useEffect(() => {
+  
+  // }, [moviedetails,id.Movieid]);
   useEffect(() => {
     Dispatch(getmoviecast(applang,id.Movieid))
   }, [moviecast,applang]);
   useEffect(() => {
     Dispatch(getvideos(id.Movieid))
+    
+  }, [id.Movieid]);
+  useEffect(() => {
     gettutorailvideos(movievideos)
+
+ 
+    
   }, [movievideos]);
   useEffect(() => {
     Dispatch(getsimilar(applang,id.Movieid))
@@ -55,16 +84,8 @@ function MovieDetalies({searchview}) {
  {context => {
    if (context === true) {
      return(
+      <>
        <div className='movie-detalies text-white  '>
-<iframe 
-     className={`tutorail-video ${background===true ? '' : 'movie-tutorail'}`}
-     width="420" 
-     height="315" 
-     src={`https://www.youtube.com/embed/${videokey}?autoplay=1&mute=1`}
-     />
-  <img className={`tutorail-img ${background===true ? 'movie-tutorail' : ''}`} src=
-  {api.Image + moviedetails.backdrop_path }/>
-
 <div className='movie-info p-3'>
      <Container>
        <div className='movie-logo'>
@@ -81,87 +102,89 @@ function MovieDetalies({searchview}) {
       <p className='movie-story'>{moviedetails.overview}</p>
       </Container>
 </div>
- </div>
+        </div>
+         <div className='additonal-info ' >
+         <Container fluid >
+           <Tabs
+      id="controlled-tab-example"
+      activeKey={key}
+      onSelect={(k) => setKey(k)}
+      className="tabs mb-3 " 
+     >
+      <Tab eventKey="Videos" title={t("Videos")} className='videos '>
+        
+          <Row >
+        {movievideos.map((video)=>{
+          return(
+            <Col  lg={4}  sm={6} className=' video  mb-3 ' >
+             <Zoom >
+              <div className=' video  '>
+                  <iframe  allowFullScreen width="100%" height='200' src={`https://www.youtube.com/embed/${video.key}`}></iframe>
+                  </div>
+                  </Zoom>
+            </Col>
+            
+          )
+        })}
+      </Row>
+      </Tab>
+      <Tab eventKey="cast" title={t("Casting")}>
+      <Row>
+        {
+          moviecast.map((cast)=>{
+            return(
+             <Col lg={2} md={3} sm={4} xs={6}>
+             <div className='cast mb-3'>
+                  <img className='cast-profile-img' src={api.Image + cast.profile_path }/>
+                  <span className='cast-info text-center py-5'>
+                  <p>{t("Original name")} : {cast.name} </p>
+                  <p>{t("Character")} : {cast.character} </p>
+                  </span>
+              </div>
+             </Col>
+            )
+          })
+        }
+         </Row>
+      </Tab>
+      <Tab className='more-info text-white' eventKey="more-info" title={t("More")}>
+      <ul className='list-unstyled'>
+      <li className='nav-item'>{t("Release Date")} : {moviedetails.release_date}</li>
+      <li className='nav-item'>{t("original language")} : {moviedetails.original_language}</li> 
+      <li className='nav-item'>{t("Rate")} : {moviedetails.vote_average}</li>
+      <li className='nav-item'>{t("vote count")} : {moviedetails.vote_count}</li>  
+      </ul>
+        <h5>{t("Production Companies")} :</h5>
+        <Row>
+      {Array.isArray(moviedetails.production_companies)
+        ? moviedetails.production_companies.map(company => {
+            return( <Col   >
+              <img className='company-logo' src={api.Image + company.logo_path}/>
+              </Col>);
+          })
+        : null}
+        </Row>
+      </Tab>
+      <Tab eventKey="similar" title={t("Similar")} >
+      <Row>
+        {similarmovie.map((movie)=>{
+          return(
+            <FeauterdMovies movie={movie}/>
+          )
+        })}
+      </Row>
+      </Tab>
+     </Tabs>
+         </Container>
+         </div>
+         </>
      )
    }
  }}
 </SearchContext.Consumer>
       )}
     </div>
-    <div className='additonal-info p-3' >
-    <Container fluid >
-      <Tabs
- id="controlled-tab-example"
- activeKey={key}
- onSelect={(k) => setKey(k)}
- className="tabs mb-3 " 
->
- <Tab eventKey="Videos" title={t("Videos")} className='videos '>
    
-     <Row >
-   {movievideos.map((video)=>{
-     return(
-       <Col  lg={4}  sm={6} className=' video  mb-3 ' >
-        <Zoom >
-         <div className=' video  '>
-             <iframe  allowFullScreen width="100%" height='200' src={`https://www.youtube.com/embed/${video.key}`}></iframe>
-             </div>
-             </Zoom>
-       </Col>
-       
-     )
-   })}
- </Row>
- </Tab>
- <Tab eventKey="cast" title={t("Casting")}>
- <Row>
-   {
-     moviecast.map((cast)=>{
-       return(
-        <Col >
-        <div className='cast mb-3'>
-             <img className='cast-profile-img' src={api.Image + cast.profile_path }/>
-             <span className='cast-info text-center py-5'>
-             <p>{t("Original name")} : {cast.name} </p>
-             <p>{t("Character")} : {cast.character} </p>
-             </span>
-         </div>
-        </Col>
-       )
-     })
-   }
-    </Row>
- </Tab>
- <Tab className='more-info text-white' eventKey="more-info" title={t("More")}>
- <ul className='list-unstyled'>
- <li className='nav-item'>{t("Release Date")} : {moviedetails.release_date}</li>
- <li className='nav-item'>{t("original language")} : {moviedetails.original_language}</li> 
- <li className='nav-item'>{t("Rate")} : {moviedetails.vote_average}</li>
- <li className='nav-item'>{t("vote count")} : {moviedetails.vote_count}</li>  
- </ul>
-   <h5>{t("Production Companies")} :</h5>
-   <Row>
- {Array.isArray(moviedetails.production_companies)
-   ? moviedetails.production_companies.map(company => {
-       return( <Col   >
-         <img className='company-logo' src={api.Image + company.logo_path}/>
-         </Col>);
-     })
-   : null}
-   </Row>
- </Tab>
- <Tab eventKey="similar" title={t("Similar")} >
- <Row>
-   {similarmovie.map((movie)=>{
-     return(
-       <FeauterdMovies movie={movie}/>
-     )
-   })}
- </Row>
- </Tab>
-</Tabs>
-    </Container>
-    </div>
     </div>
   
    

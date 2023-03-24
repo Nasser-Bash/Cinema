@@ -1,10 +1,13 @@
 import React,{ useState , useEffect } from "react";
 import { Form , Container, Row, Button , Dropdown , Col } from 'react-bootstrap'
 import { useSelector ,useDispatch} from "react-redux";
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 import {getgenres,filtering} from "../../redux/action/MoivesAction";
 import { useTranslation } from 'react-i18next';
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-function Filter({searchview,moviesType,setdatainput,datainput}) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark ,faFilter } from "@fortawesome/free-solid-svg-icons";
+function Filter({mobileFilter,moviesType,setdatainput,datainput,isactive}) {
     const { t, i18n } = useTranslation();
     const [genres, setgenres] = useState([]);
     const [genreids, setgenreids] = useState([]);
@@ -13,6 +16,7 @@ function Filter({searchview,moviesType,setdatainput,datainput}) {
     const [slectedYear, setslectedYear] = useState('');
     const [filterData, setfilterData] = useState([]);
     const [isDisabled, setisDisabled] = useState();
+    const [position, setposition] = useState();
     const Dispatch = useDispatch();
     const ALLgenreslist = useSelector((state)=>state.geners.generslist);
     const applang = useSelector((state)=>state.languages.lang);
@@ -34,19 +38,27 @@ function Filter({searchview,moviesType,setdatainput,datainput}) {
         setdatainput({ year:slectedYear, id : genreids.map((id)=>id)})
         
       }
-        const filteringByRate = (e)=>{  
-        if(e.target.value ==='filterByRate'){
-         const rating =  moviedata.sort((a, b)=> {
-          return parseFloat(a.vote_average) - parseFloat(b.vote_average);
-         
-         })
-        
-        }
-      }
+       
       let years = [];
       for (let i =currentYear ; i >= startYear; i--) {
         years.push(i);
     }
+ 
+
+  useEffect(() => {
+    window.onscroll= function () {
+      const section = document.querySelector('.mobile-filtirng');
+      if ( window.scrollY > section.offsetTop+300  ) {
+        setposition(true)
+        
+      } 
+     
+      else{
+        setposition(false)
+      }
+     
+    }
+  }, []);
     useEffect(() => {
         setgenres(ALLgenreslist);
       }, [ALLgenreslist]);
@@ -57,15 +69,14 @@ function Filter({searchview,moviesType,setdatainput,datainput}) {
       useEffect(() => {
         setfilterData(datainput);
        
-        console.log(isDisabled);
       }, [datainput]);
   return (
     <>
-    <div className='filter p-3  mb-5 '>
-        <Form className='w-50' onSubmit={handelfilter}>
-        <h4 className=" my-auto mb-3 px-1 text-white">{t("Filter")} : </h4>
-          <Row>
-      <Col><Dropdown className=" mb-2">
+    <div  className='filter d-sm-block d-none p-3  mb-5 '>
+        <Form className=' d-flex ' onSubmit={handelfilter}>
+       
+          <h4 className=" my-auto mb-3 px-1 text-white">{t("Filter")} : </h4>
+      <Dropdown className=" mb-2 me-2">
       <Dropdown.Toggle variant=""  id="dropdown-basic">
       {t("Select Year")}
     </Dropdown.Toggle>
@@ -74,14 +85,42 @@ function Filter({searchview,moviesType,setdatainput,datainput}) {
        
         {years.map((year)=>{
                 return(
-                  <Col md={4}>
+                  <Col md={4} key={year}>
                 <Form.Check
                         name="year"
                         onChange={(e)=>setslectedYear(e.target.value)}
                         value={year}
                         type="radio"
                         label={year}
-                      
+
+                      />
+              </Col>
+              )})
+            }
+        
+        </Row>
+
+      </Dropdown.Menu>
+      </Dropdown>
+
+
+       <Dropdown className=" mb-2">
+      <Dropdown.Toggle variant=""  id="dropdown-basic">
+      {t("select genres")}
+    </Dropdown.Toggle>
+      <Dropdown.Menu className="p-3  ">
+        <Row style={{width:'400px'}} className="p-2  ">
+        {genres.map((genre)=>{
+                return(
+                  <Col md={4} key={genre.id}>
+                <Form.Check
+                        name="genersid"
+                        onChange={checkHandler}
+                        value={genre.id} 
+                        type="checkbox"
+                        id={genre.id}
+                        label={genre.name}
+
                       />
                 </Col> 
               )})
@@ -90,18 +129,32 @@ function Filter({searchview,moviesType,setdatainput,datainput}) {
         </Row>
 
       </Dropdown.Menu>
-      </Dropdown></Col>
+      </Dropdown>
 
+     
+     <Button disabled={isDisabled} type="submit" className={ ` ${applang ==='ar' ? '' : 'ms-auto'}`} variant="">{t("filter")}</Button>
+     
+        </Form>
+    </div>
+            
 
-      <Col> <Dropdown className=" mb-2">
-      <Dropdown.Toggle variant=""  id="dropdown-basic">
-      {t("select genres")}
-    </Dropdown.Toggle>
-      <Dropdown.Menu className="p-3  ">
-        <Row style={{width:'400px'}} className="p-2  ">
+    <div  className="d-sm-none  d-block mobile-filtirng ">     
+    <FontAwesomeIcon className={`open-mobile-filter p-3 ${position===true ? 'd-block' : 'd-none'}`} onClick={()=>mobileFilter(true)}  icon={faFilter}/>
+    <div className={`mobile-filter d-sm-none  d-block ${isactive === true ? "active" :""}`} >
+       <FontAwesomeIcon style={{cursor:'pointer'}} onClick={()=>mobileFilter(false)} className='close p-3' icon={faXmark}/>
+            <Form className='  p-2 px-3' onSubmit={handelfilter}>
+          <div className="d-flex mb-4">
+          <h4 className=" my-auto text-white">{t("Filter")} : </h4>
+        <Button type="submit" className={ `my-auto ${applang ==='ar' ? 'me-auto' : 'ms-auto'}`} variant="">{t("filter")}</Button>
+          </div>
+        <div className="filter-by-genres">
+            <h6> {t("Select genres")}:</h6>
+            <ul className="list-unstyled">
+            <Row  className="p-2">
         {genres.map((genre)=>{
                 return(
-                  <Col md={4}>
+                  <Col xs={6}>
+                       <li className="">
                 <Form.Check
                         name="genersid"
                         onChange={checkHandler}
@@ -110,36 +163,51 @@ function Filter({searchview,moviesType,setdatainput,datainput}) {
                         id={genre.id}
                         label={genre.name}
                       />
+                      </li>
                 </Col> 
               )})
             }
-        
-        </Row>
-
-      </Dropdown.Menu>
-      </Dropdown></Col>
-
-      <Col> 
-      <Dropdown className=" mb-2">
-      <Dropdown.Toggle variant=""  id="dropdown-basic">
-      {t("Select rating")}
-    </Dropdown.Toggle>
-      <Dropdown.Menu className="p-3 ">
+              </Row>
+            </ul>
+        </div>
+       
+        {/* <div className="filter-by-years">
+            <h6> {t("Select Year")}:</h6>
+            <ul className="list-unstyled">
+            <Row  className="p-2">
+        {years.map((year)=>{
+                return(
+                  <Col xs={4}>
+                       <li className="">
                 <Form.Check
-                        name="rating"
-                        onChange={filteringByRate}
-                        value='filterByRate'
+                        name="year"
+                        onChange={(e)=>setslectedYear(e.target.value)}
+                        value={year}
                         type="radio"
-                        label='filterByRate'
+                        label={year}
                       />
-                      
-      </Dropdown.Menu>
-      </Dropdown>
-      </Col>
-      <Col><Button disabled={isDisabled} type="submit" className={ ` ${applang ==='ar' ? '' : 'ms-auto'}`} variant="">{t("filter")}</Button></Col>
-      </Row>
+                      </li>
+                </Col> 
+              )})
+            }
+              </Row>
+            </ul>
+        </div> */}
+        <Slider
+  aria-label="years"
+  defaultValue={2023}
+  valueLabelDisplay="auto"
+  name="year"
+  onChange={(e)=>setslectedYear(e.target.value)}
+  step={1}
+  marks
+  min={1900}
+  max={2023}
+/>
+
         </Form>
     </div>
+     </div>  
     </>
     
   )

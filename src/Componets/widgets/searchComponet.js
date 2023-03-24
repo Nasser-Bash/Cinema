@@ -28,8 +28,6 @@ function SearchComponet() {
               ) : <h3 className='text-white text-center mt-5'>{t('No result found')} </h3>}
    </Row>
   </Container>
-  
-        
  </div>
   )
 }

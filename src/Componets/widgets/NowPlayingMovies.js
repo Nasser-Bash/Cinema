@@ -1,5 +1,4 @@
-import React , {useEffect,useState} from 'react'
-import  axios  from "axios";
+import React , {useEffect} from 'react'
 import MoivesSlider from "./MoivesSlider";
 import { useTranslation } from 'react-i18next';
 import { useDispatch , useSelector } from "react-redux";

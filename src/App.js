@@ -10,20 +10,11 @@ import SearchComponet from "./Componets/widgets/searchComponet";
 import ScrollToTop from "./Componets/widgets/ScrollToTop";
 import Fade from 'react-reveal/Fade';
 export  const SearchContext = createContext();
-// const [isLoading, setLoading] = useState(true);
-// if (isLoading) {
-//   return (<div className="App-loader">
-//           <div className="loading"></div>
-//   </div>)
-// }
-
-
 function App() {
   const [searchview, setsearchview] = useState(true);
   const [isLoading, setLoading] = useState(true);
   const { t, i18n } = useTranslation();
   document.body.dir = i18n.dir();
- 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -38,7 +29,6 @@ function App() {
         <div class="shadow"></div>
         <div class="shadow"></div>
         <div class="shadow"></div>
-	
         </div>
     ):( <Fade> <div className="App">
       <SearchContext.Provider value={searchview}>

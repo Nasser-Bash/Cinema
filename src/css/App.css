@@ -1,4 +1,4 @@
-.Header.active-navbar, .search-Header, .filter .dropdown-menu, .mobile-filter, .mobile-filter .dropdown-menu, body, .MuiMenu-list {
+.Header.active-navbar, .search-Header, .filter .dropdown-menu, .mobile-filtirng .mobile-filter, .mobile-filtirng .mobile-filter .dropdown-menu, body, .MuiMenu-list {
   background: #252a3d;
   background: -webkit-gradient(linear, left top, right top, from(#252a3d), to(#212529));
   background: linear-gradient(90deg, #252a3d 0%, #212529 100%);
@@ -8,7 +8,7 @@ button:hover {
   background: #95a3e0 !important;
 }
 
-.filter, .pagination .page .page-link, .pagination .page .page-link.active, .mobile-filter {
+.filter, .pagination .page .page-link, .pagination .page .page-link.active, .mobile-filtirng .mobile-filter {
   border-bottom: 2px solid #95a3e0;
 }
 
@@ -93,11 +93,8 @@ button {
 }
 
 .footer .social a {
-  margin-right: 65px;
-}
-
-.footer .social a:last-child {
-  margin-right: 0;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .footer .logo {
@@ -134,6 +131,13 @@ button {
     background-color: transparent;
     width: 2px;
     height: 30px;
+  }
+}
+
+@media (max-width: 385px) {
+  .footer .social a {
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 
@@ -334,6 +338,7 @@ button {
 
 .movies-page .additonal-info .tabs {
   border-bottom: 2px solid #4f50508a;
+  padding-right: 0;
 }
 
 .movies-page .additonal-info .tabs li button {
@@ -358,9 +363,13 @@ button {
   color: white;
 }
 
+.movies-page .additonal-info .tabs li .nav-link {
+  padding: 0.5rem !important;
+  font-size: 13px;
+}
+
 .movies-page .additonal-info .cast {
   position: relative;
-  width: 10rem;
 }
 
 .movies-page .additonal-info .cast:hover .cast-info {
@@ -462,7 +471,7 @@ button {
 }
 
 .mobile-menu-button .mobile-menu-buttom-2 {
-  width: 25px;
+  width: 20px;
   height: 2px;
   background-color: white;
   position: absolute;
@@ -681,7 +690,7 @@ button {
 
 @media only screen and (max-width: 600px) {
   .swiper-css-mode {
-    height: 700px;
+    height: 600px;
   }
 }
 
@@ -710,7 +719,7 @@ button {
 .card-movie {
   width: 100%;
   position: relative;
-  height: 280px;
+  height: 300px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -794,6 +803,12 @@ button {
   animation-fill-mode: both;
 }
 
+@media only screen and (max-width: 400px) {
+  .card-movie {
+    height: 450px;
+  }
+}
+
 @-webkit-keyframes rotateInDownRight {
   0% {
     -webkit-transform-origin: right bottom;
@@ -832,6 +847,7 @@ button {
   position: relative;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .card-movie-2::after {
@@ -877,11 +893,39 @@ button {
     padding-top: 25px;
   }
   .card-movie-2 .sub-detailes .movie-title {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  .card-movie-2 .sub-detailes .movie-overview {
+    font-size: 15px;
+  }
+  .card-movie-2 .sub-detailes .poster {
+    width: 150px;
+    height: 250px;
   }
 }
 
-.mobile-filter {
+.open-mobile-filter {
+  cursor: pointer;
+  color: white;
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  z-index: 10;
+  background-color: #95a3e0;
+  border-radius: 50%;
+}
+
+.open-mobile-filter:hover {
+  color: #212529;
+}
+
+.mobile-filtirng {
+  position: relative;
+}
+
+.mobile-filtirng .mobile-filter {
   -webkit-transition: all .3s ease-in;
   transition: all .3s ease-in;
   overflow-y: auto;
@@ -894,17 +938,17 @@ button {
   z-index: 10;
 }
 
-.mobile-filter.active {
+.mobile-filtirng .mobile-filter.active {
   left: 0;
 }
 
-.mobile-filter .dropdown-menu {
+.mobile-filtirng .mobile-filter .dropdown-menu {
   color: white;
   overflow-y: scroll;
   height: 200px;
 }
 
-.mobile-filter .dropdown-menu .form-check-input:checked {
+.mobile-filtirng .mobile-filter .dropdown-menu .form-check-input:checked {
   background-color: #95a3e0;
   border-color: #212529;
 }

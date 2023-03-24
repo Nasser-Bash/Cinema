@@ -10,6 +10,7 @@ export const moviesReducer = (state = intialvalue,action)=>{
                             return {movies:action.data,pagecount:action.pages}; 
                      case Filter : 
                             return {movies:action.data,pagecount:action.pages,types:action.type}
+                   
                     default:
                         return state;
                 } 

@@ -1,8 +1,9 @@
 .card-movie{
     width: 100%;
     position: relative;
-    height: 280px;
+    height: 300px;
     border-radius: 10px;
+    
     img{
         width: 100%;
         height: 100%;
@@ -72,6 +73,11 @@
   animation-fill-mode: both;
 }
 }
+@media only screen and (max-width: 400px) {
+    .card-movie{
+        height : 450px
+   }}
+
 @-webkit-keyframes rotateInDownRight {
     0% {
     -webkit-transform-origin: right bottom;

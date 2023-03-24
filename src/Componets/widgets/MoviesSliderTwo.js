@@ -38,8 +38,8 @@ function MoviesSliderTwo({movies,slidetitle}) {
         {
           movies.map((movie)=>{
             return(
-            <SwiperSlide>
-               <MoviesCardTwo movie={movie}/>
+            <SwiperSlide key={movie.id}>
+               <MoviesCardTwo  movie={movie}/>
             </SwiperSlide>)
           })
         }

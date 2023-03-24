@@ -16,7 +16,7 @@ function MoivesSlider({movies,slidetitle,type}) {
   return (
     <div className="movies-slider">
       <Container fluid>
-      <h2 className="slider-title my-auto px-3 text-white">{slidetitle} :</h2>
+      <h2 className="slider-title mb-4 px-3 text-white">{slidetitle} :</h2>
       <Swiper
         spaceBetween={15}
         autoplay={{
@@ -30,7 +30,7 @@ function MoivesSlider({movies,slidetitle,type}) {
           400:{
             slidesPerView:2,
           },
-          639: {
+          549: {
             slidesPerView: 3,
           },
           865:{
@@ -55,7 +55,7 @@ function MoivesSlider({movies,slidetitle,type}) {
         {
           movies.map((movie)=>{
             return(
-            <SwiperSlide>
+            <SwiperSlide key={movie.id}>
                <MovieCard movie={movie}/>
             </SwiperSlide>)
           })

@@ -57,38 +57,47 @@
 .additonal-info{
     .tabs{
         border-bottom: 2px solid #4f50508a;
-        li{
-            button{
-               border: none;
-               background-color: transparent !important; 
-               color: $textcolor;
-               
-                &:hover {
-                    border-bottom: 2px solid $fourthcolor;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    color: $textcolor;
-                 }       
-                 &.active {
-                    border-bottom: 2px solid $fourthcolor;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    color: $textcolor;
-                 }       
+        
+            padding-right: 0;
+            li{
+                button{
+                   border: none;
+                   background-color: transparent !important; 
+                   color: $textcolor;
+                   
+                    &:hover {
+                        border-bottom: 2px solid $fourthcolor;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        color: $textcolor;
+                     }       
+                     &.active {
+                        border-bottom: 2px solid $fourthcolor;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        color: $textcolor;
+                     }       
+                }
+                .nav-link{
+                    padding: 0.5rem !important;
+                    font-size: 13px;
+                }
             }
-        }
+       
+      
 
     }
     .cast{
         position: relative;
-        width: 10rem;
+      
         &:hover .cast-info{
             opacity: 1;
         }
         .cast-profile-img{
             width: 100%;
+            
         }
         .cast-info{
             position: absolute;

@@ -33,9 +33,7 @@ useEffect(() => {
     setpageCount(moviesPages); 
     
   }, [moviesData]);
-  // useEffect(() => {
-  //   console.log(datainput); 
-  // }, [datainput]);
+
   return (
     <div className='home text-white'>
       {searchview && (
@@ -51,7 +49,7 @@ useEffect(() => {
         {
           movies.map((movie)=>{
             return(
-            <FeauterdMovies movie={movie}/>)
+            <FeauterdMovies key={movie.id} movie={movie}/>)
           })
         }
         </Row>

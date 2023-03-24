@@ -6,6 +6,7 @@ import { api } from "../API";
 import { Button } from 'react-bootstrap';
 import Zoom from 'react-reveal/Zoom';
 function MoviesCardTwo({movie}) {
+
   return (
    <div key={movie.id}  className='card-movie-2 mx-auto    text-white' >
     <img className='card-background' src = {api.Image + movie.backdrop_path} /> 
@@ -15,7 +16,9 @@ function MoviesCardTwo({movie}) {
        <div className='detailes my-auto p-1'>
                <h6 className='movie-title '>{movie.title}</h6>   
            <p className='movie-rate px-1'>{movie.vote_average}  <i className='rate-icon'><FontAwesomeIcon icon={faStar}/></i></p>
-           <p>{movie.overview}</p>
+           <p className='movie-overview'>
+            {`${movie.overview.substring(0,100)} ...`}
+            </p>
            <Link to={`/movie/${movie.id}`}> <Button>Read More</Button></Link>
        </div>
      </div>

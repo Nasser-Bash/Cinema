@@ -1,3 +1,20 @@
+
+.open-mobile-filter{
+    cursor:pointer;
+    color:white;
+    position:fixed; bottom: 10%; right:0;
+    transition: all 0.3s ease-in;
+    z-index: 10;
+    background-color: $fourthcolor;
+    border-radius: 50%;
+    &:hover{
+       color: $maincolor;
+    }
+}
+.mobile-filtirng{
+    position: relative;
+ 
+
 .mobile-filter{
     transition: all .3s ease-in;
     overflow-y: auto;
@@ -24,3 +41,5 @@
         }
    }
 }
+}
+

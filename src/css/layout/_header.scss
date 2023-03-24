@@ -4,16 +4,15 @@
     left: 0;
     right: 0;
     z-index: 10;
-
+   
     .navbar-brand {
         img {
             width: 200px;
         }
     }
-
-    &.active-navbar {
-        @extend %gradiantColor;
-        
+    &.active-navbar{
+        @extend %gradiantColor;   
+      
     }
     .MuiFormControl-root {
         label {

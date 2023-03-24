@@ -93,23 +93,6 @@ const changelang =(e)=>{
           <MenuItem className='text-white'  value="ar">{t("arabic")}</MenuItem>
         </Select>
       </FormControl>
-  {/* <FormControl >
-  <InputLabel variant="standard" htmlFor="uncontrolled-native">
-    Age
-  </InputLabel>
-  <NativeSelect
-    defaultValue={30}
-    inputProps={{
-      name: 'age',
-      id: 'uncontrolled-native',
-    }}
-  >
-    <option  value={10}>Ten</option>
-    <option selected value={20}>Twenty</option>
-    
-  </NativeSelect>
-</FormControl> */}
-      
         </Container>
          </Navbar>    
          

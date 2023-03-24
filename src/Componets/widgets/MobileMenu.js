@@ -41,8 +41,8 @@ function MobileMenu({handelMenu , isactive}) {
         label="Language"
         onChange={changelang}
       >
-          <MenuItem  value="en" selected>{t("english")}</MenuItem>
-        <MenuItem value="ar">{t("arabic")}</MenuItem>
+          <MenuItem className='text-white' value="en" selected>{t("english")}</MenuItem>
+        <MenuItem className='text-white' value="ar">{t("arabic")}</MenuItem>
       </Select>
            </FormControl>
             </div>

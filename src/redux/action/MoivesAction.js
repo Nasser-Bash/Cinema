@@ -34,7 +34,7 @@ export const types =  (applang,lang,page) => {
 export const filtering =  (applang,year,id, page,lang) => {                                                    
     return async (dispatch) =>{
         const repos = await axios.get(`${api.baseUrl}/discover/${api.type.movies}?api_key=${api.api_key}&with_genres=${id}&${lang}&primary_release_year=${year}&page=${page}&language=${applang}`);
-        console.log(`${api.baseUrl}/discover/${api.type.movies}?api_key=${api.api_key}&with_genres=${id}&${lang}&primary_release_year=${year}&page=${page}&language=${applang}`);
+        
         dispatch({type: Filter , data:repos.data.results,pages:repos.data.total_pages})
     }
 }
