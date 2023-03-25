@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div className='footer text-light text-center mt-5'>
           <Container className='p-4 text-center'>
-          <ul className=' Services list-unstyled d-lg-flex d-block justify-content-center text-white mb-4 '>
+          <ul className=' Services  d-lg-flex d-block justify-content-center text-white mb-4 '>
                           <li><Link to="/" className='nav-link '>{t('Home')}</Link></li>
                           <li><Link  className='nav-link'>{t('Our Services')}</Link></li>
                           <li><Link  className='nav-link'>{t('Support')}</Link></li>

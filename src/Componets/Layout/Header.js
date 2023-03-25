@@ -75,7 +75,7 @@ const changelang =(e)=>{
       <>
         <div  className={`Header d-lg-block d-none ${activeNav===true ? 'active-navbar' : ''}`}>
         <Navbar variant="dark" >
-        <Container fluid className='text-start'>
+        <Container fluid className=''>
          <Link to="/"> <Navbar.Brand className=''><img src='/images/logo.png'/></Navbar.Brand></Link>
         <Menu />
         <i style={{cursor:'pointer' }} className='nav-link text-white' onClick={()=>openSearchBar(true)}><FontAwesomeIcon icon={faSearch}/></i>

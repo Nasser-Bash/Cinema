@@ -3,7 +3,7 @@
     right: -100%;
     bottom: 0;
     width: 100%;
-    height: 91%;
+    height: 100%;
    @extend %gradiantColor;   
     transition: all 0.3s ease-in;
     z-index: 10;
@@ -11,13 +11,11 @@
     &.active{
         right: 0;
     }
-    .close{
-        color: $textcolor;
-        font-size: 1.5em;
-        cursor: pointer;
-    }
+   
     .menu{
-        ul li{
+        ul{
+            border: 1px solid rgba(255, 255, 255, 0.05);
+         li{
             border-bottom: 2px solid rgba(255, 255, 255, 0.05);
             a{
                 color: $textcolor;
@@ -27,6 +25,10 @@
             }
         }
     }
+    .language{
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
     
 }
 

@@ -5,13 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from 'react-i18next';
 import { Fade as Hamburger } from 'hamburger-react'
+
 import { Link } from 'react-router-dom';
 function MobileHeader({activeNav,openSearchBar,setactiveNav}) {
   const { t, i18n } = useTranslation();
   const [isactive, setisactive] = useState();
   const openhandelclick = ()=>{
     setisactive(!isactive)
-    setactiveNav(true)
+   
+  }
+  const closehandelclick = ()=>{
+    setisactive(!isactive)
   }
 
   return (
@@ -28,7 +32,7 @@ function MobileHeader({activeNav,openSearchBar,setactiveNav}) {
     <i onClick={()=>openSearchBar(true)} style={{cursor:'pointer' }} className='nav-link text-white' ><FontAwesomeIcon icon={faSearch}/></i>
       </Container>
        </Navbar>    
-       <MobileMenu  isactive={isactive} />
+       <MobileMenu  isactive={isactive}  closehandelclick={closehandelclick}/>
       </div>
    </>
   )

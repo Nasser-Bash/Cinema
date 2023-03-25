@@ -5,8 +5,9 @@ import { faPlayCircle , faStar } from "@fortawesome/free-solid-svg-icons";
 import { api } from "../API";
 import { Button } from 'react-bootstrap';
 import Zoom from 'react-reveal/Zoom';
+import { useTranslation } from 'react-i18next';
 function MoviesCardTwo({movie}) {
-
+  const { t, i18n } = useTranslation();
   return (
    <div key={movie.id}  className='card-movie-2 mx-auto    text-white' >
     <img className='card-background' src = {api.Image + movie.backdrop_path} /> 
@@ -19,7 +20,7 @@ function MoviesCardTwo({movie}) {
            <p className='movie-overview'>
             {`${movie.overview.substring(0,100)} ...`}
             </p>
-           <Link to={`/movie/${movie.id}`}> <Button>Read More</Button></Link>
+           <Link to={`/movie/${movie.id}`}> <Button>{t('Read more')}</Button></Link>
        </div>
      </div>
      </Zoom>

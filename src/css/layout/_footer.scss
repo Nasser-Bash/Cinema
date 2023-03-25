@@ -3,7 +3,7 @@
         li{
             position: relative;
             margin-right: 55px;
-            
+            list-style: none;
                 &::after{
                     content: '';
                     position: absolute;
@@ -13,7 +13,9 @@
                     width:  2px;
                     height: 30px;
                 }
-         
+         a{
+            list-style: none;
+         }
         }
     }
     .social{
@@ -65,8 +67,8 @@
     .footer{
         .social{
             a{
-                margin-left: 5px;
-                margin-right: 5px;
+                margin-left: 15px;
+                margin-right: 15px;
                 
             }
         }

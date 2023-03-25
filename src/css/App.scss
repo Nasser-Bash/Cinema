@@ -44,8 +44,10 @@ button{
 @import "./widgets/mobile-filter";
 body{
   @extend %gradiantColor;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
