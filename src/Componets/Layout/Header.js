@@ -97,7 +97,7 @@ const changelang =(e)=>{
          </Navbar>    
          
         </div>
-        <MobileHeader openSearchBar={openSearchBar} activeNav={activeNav}/>
+        <MobileHeader openSearchBar={openSearchBar} setactiveNav={setactiveNav} activeNav={activeNav}/>
       </>
         )  
         }

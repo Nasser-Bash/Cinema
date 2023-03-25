@@ -15,15 +15,12 @@ const { t, i18n } = useTranslation();
 const [movies, setmovies] = useState([]);
 const [pageCount, setpageCount] = useState(0);
 const [datainput, setdatainput] = useState({});
-const [isactive, setisactive] = useState();
-const moviesData = useSelector((state)=>state.movies.movies);
 
+const moviesData = useSelector((state)=>state.movies.movies);
 const moviesPages = useSelector((state)=>state.movies.pagecount);
 const applang = useSelector((state)=>state.languages.lang);
 const Dispatch = useDispatch();
-const mobileFilter = (active)=>{
-  setisactive(active);
-}
+
 useEffect(() => {
   Dispatch(getAllMovies(applang));
 }, [applang]);
@@ -44,7 +41,7 @@ useEffect(() => {
      <TopRatedMovies type="en"/>
       <Container fluid className='my-5 movies-content '>
         <div className="">
-     <Filter mobileFilter={mobileFilter} isactive={isactive} datainput={datainput} setdatainput={setdatainput} />
+     <Filter  datainput={datainput} setdatainput={setdatainput} />
         <Row>
         {
           movies.map((movie)=>{

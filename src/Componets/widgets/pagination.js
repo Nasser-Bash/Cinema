@@ -33,6 +33,8 @@ const PaginationMovies = ({pagenumber,type,datainput,moviesType}) => {
         pageCount={pageCount}
    
         renderOnZeroPageCount={null}
+        nextLabel={t("next")}
+        previousLabel={t("previous")}
         containerClassName={"pagination p-3 justify-content-center"}
         pageClassName={"page"}
         pageLinkClassName={"page-link"}

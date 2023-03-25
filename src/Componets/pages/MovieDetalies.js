@@ -19,36 +19,6 @@ function MovieDetalies({searchview}) {
   const [key, setKey] = useState('Videos');
   const [videokey, setvideokey] = useState();
   const Dispatch = useDispatch();
-  const gettutorailvideos = async (movievideos)=>{
-    const tutorailvideos = movievideos.filter((video)=>video.type==="Trailer");                                                  
-      if(tutorailvideos.length ===0){
-         setIstutorail(false);
-      }else{
-        setvideokey(tutorailvideos[0].key);
-        setIstutorail(true);
-      }
-     }
-     const [videobackground, setbackground] = useState(false);
-     const changeBackground = ()=>{
-      if(Istutorail==true){
-      setbackground(true)
-      return(
-         
-            <ReactPlayer 
-              width="420" 
-              height="315" 
-              autoPlay={true}
-              className='movie-tutorail'
-              url={`https://www.youtube.com/embed/${videokey}`} />
-             
-           ) 
-       }else{
-        return (
-          <img  className='movie-tutorail' src=
-          {api.Image + moviedetails.backdrop_path }/>
-        )
-       }
-     }
      const moviedetails = useSelector((state)=>state.details.details);
      const moviecast = useSelector((state)=>state.casting.cast);
      const movievideos = useSelector((state)=>state.videos.videos);
@@ -57,9 +27,6 @@ function MovieDetalies({searchview}) {
     Dispatch(getmoviedetaile(applang,id.Movieid))
     
   }, [moviedetails,id.Movieid]);
-  // useEffect(() => {
-  
-  // }, [moviedetails,id.Movieid]);
   useEffect(() => {
     Dispatch(getmoviecast(applang,id.Movieid))
   }, [moviecast,applang]);
@@ -67,15 +34,11 @@ function MovieDetalies({searchview}) {
     Dispatch(getvideos(id.Movieid))
     
   }, [id.Movieid]);
-  useEffect(() => {
-    gettutorailvideos(movievideos)
 
- 
-    
-  }, [movievideos]);
   useEffect(() => {
     Dispatch(getsimilar(applang,id.Movieid))
   }, [similarmovie,applang]);
+
   return (
     <div className='movies-page'>
       <div>
@@ -86,7 +49,10 @@ function MovieDetalies({searchview}) {
      return(
       <>
        <div className='movie-detalies text-white  '>
+       <img  className='movie-tutorail' src=
+                {api.Image + moviedetails.backdrop_path }/>
 <div className='movie-info p-3'>
+ 
      <Container>
        <div className='movie-logo'>
          <h1 className='movie-title'>{moviedetails.title}</h1>

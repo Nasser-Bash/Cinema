@@ -55,7 +55,7 @@ function Movietype({searchview}) {
        return(
              <Container className='my-5 movies-content' fluid>
               <div className='content '>
-              <Filter moviesType={`with_original_language=${type.lang}`} setdatainput={setdatainput}/>
+              <Filter moviesType={`with_original_language=${type.lang}`}  datainput={datainput} setdatainput={setdatainput}/>
              <Row>
      {
        moviedata.map((movie)=>{

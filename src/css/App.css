@@ -1,4 +1,4 @@
-.Header.active-navbar, .search-Header, .filter .dropdown-menu, .mobile-filtirng .mobile-filter, .mobile-filtirng .mobile-filter .dropdown-menu, body, .MuiMenu-list {
+.Header.active-navbar, .search-Header, .filter .dropdown-menu, .mobile-menu, .mobile-filtirng .mobile-filter, .mobile-filtirng .mobile-filter .dropdown-menu, body, .MuiMenu-list {
   background: #252a3d;
   background: -webkit-gradient(linear, left top, right top, from(#252a3d), to(#212529));
   background: linear-gradient(90deg, #252a3d 0%, #212529 100%);
@@ -75,6 +75,65 @@ button {
 
 .search-Header .MuiFormControl-root:hover .MuiInput-underline:before {
   border-color: #95a3e0;
+}
+
+.mobile-menu-button label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+}
+
+.mobile-menu-button label span {
+  background: #fff;
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  -webkit-transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.mobile-menu-button span:nth-of-type(1) {
+  width: 50%;
+}
+
+.mobile-menu-button span:nth-of-type(2) {
+  width: 100%;
+}
+
+.mobile-menu-button span:nth-of-type(3) {
+  width: 75%;
+}
+
+.mobile-menu-button input[type="checkbox"] {
+  display: none;
+}
+
+.mobile-menu-button input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotatez(45deg) translate(8px, 0px);
+          transform: rotatez(45deg) translate(8px, 0px);
+}
+
+.mobile-menu-button input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotatez(-45deg);
+          transform: rotatez(-45deg);
+}
+
+.mobile-menu-button input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  width: 50%;
+  -webkit-transform: translate(30px, -11px) rotatez(45deg);
+          transform: translate(30px, -11px) rotatez(45deg);
 }
 
 .footer .Services li {
@@ -423,14 +482,13 @@ button {
 .mobile-menu {
   position: fixed;
   right: -100%;
-  top: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
-  background-color: #212529;
+  height: 91%;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   z-index: 10;
+  overflow: auto;
 }
 
 .mobile-menu.active {
@@ -453,39 +511,6 @@ button {
 
 .mobile-menu .menu ul li a:hover {
   color: #95a3e0;
-}
-
-.mobile-menu-button {
-  position: relative;
-  width: 30px;
-  cursor: pointer;
-}
-
-.mobile-menu-button .mobile-menu-buttom-1 {
-  width: 20px;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.mobile-menu-button .mobile-menu-buttom-2 {
-  width: 20px;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  top: 6px;
-  right: 0;
-}
-
-.mobile-menu-button .mobile-menu-buttom-3 {
-  width: 20px;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  top: 12px;
-  right: 0;
 }
 
 .navbar-nav a {
@@ -909,10 +934,10 @@ button {
   color: white;
   position: fixed;
   bottom: 10%;
-  right: 0;
+  right: 30px;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  z-index: 10;
+  z-index: 8;
   background-color: #95a3e0;
   border-radius: 50%;
 }
@@ -923,6 +948,15 @@ button {
 
 .mobile-filtirng {
   position: relative;
+}
+
+.mobile-filtirng .form-check-input:checked {
+  background-color: #95a3e0;
+  border-color: #212529;
+}
+
+.mobile-filtirng .MuiSlider-root {
+  color: #95a3e0 !important;
 }
 
 .mobile-filtirng .mobile-filter {

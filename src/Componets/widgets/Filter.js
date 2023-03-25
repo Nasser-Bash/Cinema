@@ -7,7 +7,7 @@ import {getgenres,filtering} from "../../redux/action/MoivesAction";
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark ,faFilter } from "@fortawesome/free-solid-svg-icons";
-function Filter({mobileFilter,moviesType,setdatainput,datainput,isactive}) {
+function Filter({moviesType,setdatainput,datainput}) {
     const { t, i18n } = useTranslation();
     const [genres, setgenres] = useState([]);
     const [genreids, setgenreids] = useState([]);
@@ -17,6 +17,10 @@ function Filter({mobileFilter,moviesType,setdatainput,datainput,isactive}) {
     const [filterData, setfilterData] = useState([]);
     const [isDisabled, setisDisabled] = useState();
     const [position, setposition] = useState();
+    const [isactive, setisactive] = useState();
+    const mobileFilter = (active)=>{
+      setisactive(active);
+    }
     const Dispatch = useDispatch();
     const ALLgenreslist = useSelector((state)=>state.geners.generslist);
     const applang = useSelector((state)=>state.languages.lang);
@@ -48,11 +52,9 @@ function Filter({mobileFilter,moviesType,setdatainput,datainput,isactive}) {
   useEffect(() => {
     window.onscroll= function () {
       const section = document.querySelector('.mobile-filtirng');
-      if ( window.scrollY > section.offsetTop+300  ) {
+      if ( window.scrollY > section.offsetTop-300  ) {
         setposition(true)
-        
       } 
-     
       else{
         setposition(false)
       }
@@ -138,7 +140,7 @@ function Filter({mobileFilter,moviesType,setdatainput,datainput,isactive}) {
     </div>
             
 
-    <div  className="d-sm-none  d-block mobile-filtirng ">     
+    <div  className="d-sm-none  d-block mobile-filtirng text-white ">     
     <FontAwesomeIcon className={`open-mobile-filter p-3 ${position===true ? 'd-block' : 'd-none'}`} onClick={()=>mobileFilter(true)}  icon={faFilter}/>
     <div className={`mobile-filter d-sm-none  d-block ${isactive === true ? "active" :""}`} >
        <FontAwesomeIcon style={{cursor:'pointer'}} onClick={()=>mobileFilter(false)} className='close p-3' icon={faXmark}/>
@@ -170,33 +172,12 @@ function Filter({mobileFilter,moviesType,setdatainput,datainput,isactive}) {
               </Row>
             </ul>
         </div>
-       
-        {/* <div className="filter-by-years">
-            <h6> {t("Select Year")}:</h6>
-            <ul className="list-unstyled">
-            <Row  className="p-2">
-        {years.map((year)=>{
-                return(
-                  <Col xs={4}>
-                       <li className="">
-                <Form.Check
-                        name="year"
-                        onChange={(e)=>setslectedYear(e.target.value)}
-                        value={year}
-                        type="radio"
-                        label={year}
-                      />
-                      </li>
-                </Col> 
-              )})
-            }
-              </Row>
-            </ul>
-        </div> */}
+        <h6> {t("Select Year")}:</h6>
         <Slider
   aria-label="years"
   defaultValue={2023}
   valueLabelDisplay="auto"
+ 
   name="year"
   onChange={(e)=>setslectedYear(e.target.value)}
   step={1}
