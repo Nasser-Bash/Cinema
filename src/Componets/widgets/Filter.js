@@ -76,9 +76,8 @@ function Filter({moviesType,setdatainput,datainput}) {
     <>
     <div  className='filter d-sm-block d-none p-3  mb-5 '>
         <Form className=' d-flex ' onSubmit={handelfilter}>
-       
           <h4 className=" my-auto mb-3 px-1 text-white">{t("Filter")} : </h4>
-      <Dropdown className=" mb-2 me-2">
+      <Dropdown className=" mb-2 me-2 ms-2">
       <Dropdown.Toggle variant=""  id="dropdown-basic">
       {t("Select Year")}
     </Dropdown.Toggle>
@@ -134,7 +133,7 @@ function Filter({moviesType,setdatainput,datainput}) {
       </Dropdown>
 
      
-     <Button disabled={isDisabled} type="submit" className={ ` ${applang ==='ar' ? '' : 'ms-auto'}`} variant="">{t("filter")}</Button>
+     <Button disabled={isDisabled} type="submit" className={ ` ${applang ==='ar' ? 'me-auto' : 'ms-auto'}`} variant="">{t("filter")}</Button>
      
         </Form>
     </div>

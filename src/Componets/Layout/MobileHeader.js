@@ -22,9 +22,8 @@ function MobileHeader({activeNav,openSearchBar,setactiveNav}) {
     <>
       <div  className={`Header d-lg-none d-block ${activeNav===true ? 'active-navbar' : ''}`}>
       <Navbar variant="dark" >
-      <Container fluid>
-    
-      <div className='   mobile-menu-button'>
+      <Container  className=' pe-0'>  
+      <div className='mobile-menu-button'>
       <Hamburger color="#ffff" size={30} toggled={isactive} toggle={openhandelclick} />
       
     </div>

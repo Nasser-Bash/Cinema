@@ -1,11 +1,6 @@
 # Getting Started with Create React App
 
-    styling : 
-    1-Edit Header
-    2-loader
-    programming : 
-    1-pagination
-    2-loader
+
    
 
 
