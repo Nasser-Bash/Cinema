@@ -2,13 +2,14 @@
     .Services{
         li{
             position: relative;
-            margin-right: 55px;
+
+           
             list-style: none;
                 &::after{
                     content: '';
                     position: absolute;
                     top: 0;
-                    right: -15px;
+                    right: -14px;
                     background-color: $textcolor;
                     width:  2px;
                     height: 30px;
@@ -18,13 +19,13 @@
          }
         }
     }
-    .social{
-        a{
-            margin-left: 50px;
-            margin-right: 50px;
+    // .social{
+    //     a{
+    //         margin-left: 50px;
+    //         margin-right: 50px;
             
-        }
-    }
+    //     }
+    // }
     .logo{
         width: 200px;
     }
@@ -48,7 +49,6 @@
     .footer{
         .Services{
             li{
-                margin-right: 0;
                 margin-bottom: 10px;
                 &::after{
                     content: '';

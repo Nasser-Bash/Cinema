@@ -1,7 +1,5 @@
 .Header.active-navbar, .search-Header, .filter .dropdown-menu, .mobile-menu, .mobile-filtirng .mobile-filter, .mobile-filtirng .mobile-filter .dropdown-menu, body, .MuiMenu-list {
   background: #252a3d;
-  background: -webkit-gradient(linear, left top, right top, from(#252a3d), to(#212529));
-  background: linear-gradient(90deg, #252a3d 0%, #212529 100%);
 }
 
 button:hover {
@@ -142,7 +140,6 @@ button {
 
 .footer .Services li {
   position: relative;
-  margin-right: 55px;
   list-style: none;
 }
 
@@ -150,7 +147,7 @@ button {
   content: '';
   position: absolute;
   top: 0;
-  right: -15px;
+  right: -14px;
   background-color: white;
   width: 2px;
   height: 30px;
@@ -158,11 +155,6 @@ button {
 
 .footer .Services li a {
   list-style: none;
-}
-
-.footer .social a {
-  margin-left: 50px;
-  margin-right: 50px;
 }
 
 .footer .logo {
@@ -188,7 +180,6 @@ button {
 
 @media (max-width: 992px) {
   .footer .Services li {
-    margin-right: 0;
     margin-bottom: 10px;
   }
   .footer .Services li::after {
@@ -506,6 +497,7 @@ button {
 
 .mobile-menu .menu ul {
   border: 1px solid rgba(255, 255, 255, 0.05);
+  padding-right: 0;
 }
 
 .mobile-menu .menu ul li {
@@ -809,14 +801,8 @@ button {
 }
 
 body {
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .MuiSelect-select {

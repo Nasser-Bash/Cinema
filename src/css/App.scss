@@ -5,7 +5,8 @@ $textcolor:white;
 $secondtextcolor:grey;
 %gradiantColor{
  background: rgb(37,42,61);
-background: linear-gradient(90deg, rgba(37,42,61,1) 0%, rgba(33,37,41,1) 100%);
+
+
 }
 %HovertColor{
   background: $fourthcolor !important;
@@ -44,13 +45,10 @@ button{
 @import "./widgets/mobile-filter";
 body{
   @extend %gradiantColor;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+ 
  
 }
 .MuiMenu-list{
