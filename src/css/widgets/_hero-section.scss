@@ -127,12 +127,7 @@
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, 6vh 0, 6vh 61vh, 44vh 61vh, 44vh 6vh, 6vh 6vh);
       transform-origin: 50% 0;
       transition-timing-function: $easing;
-      -webkit-animation-name: rotateUpLift;
-      animation-name: rotateUpLift;
-      -webkit-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
+     
       .m--before-sliding & {
         transform: rotate($deg*-1) translate3d($xOffset,0,0);
         opacity: 0;
@@ -196,14 +191,14 @@
         overflow: hidden;
         position: relative;
         padding-right: 20px;
-        font-size: $headingFontSize;
+        font-size: 15vw;
         color: #fff;
         word-spacing: 10px;
         
         &:nth-child(2) {
           padding-left: $headingPadding;
         }
-
+        
         .m--before-sliding & {
           transform: translateY(100%);
         }
@@ -778,25 +773,25 @@ $cubOut: cubic-bezier(.67,-0.16,.47,1.61);
   
   
 
-  .swiper-slide-active{
-    .fnc-slide__mask{
+  // .swiper-slide-active{
+  //   .fnc-slide__mask{
       
-        -webkit-animation-name: rotateInDownRight;
-        animation-name: rotateInDownRight;
-        -webkit-animation-duration: 1.4s;
-        animation-duration: 1.4s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-    }
-    .fnc-slide__heading-line {
-      -webkit-animation-name: bounceInUp;
-      animation-name: bounceInUp;
-      -webkit-animation-duration: 1.4s;
-      animation-duration: 1.4s;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
-      }
-  }
+  //       -webkit-animation-name: rotateInDownRight;
+  //       animation-name: rotateInDownRight;
+  //       -webkit-animation-duration: 0.4s;
+  //       animation-duration: 0.4s;
+  //       -webkit-animation-fill-mode: both;
+  //       animation-fill-mode: both;
+  //   }
+  //   .fnc-slide__heading-line {
+  //     -webkit-animation-name: bounceInUp;
+  //     animation-name: bounceInUp;
+  //     -webkit-animation-duration: 1.4s;
+  //     animation-duration: 1.4s;
+  //     -webkit-animation-fill-mode: both;
+  //     animation-fill-mode: both;
+  //     }
+  // }
 
 
  
@@ -857,3 +852,8 @@ $cubOut: cubic-bezier(.67,-0.16,.47,1.61);
             visibility: hidden;
           }
         }
+        // @media  (min-width: 480px)  {
+        //   .fnc-slide__heading-line {
+        //    font-size: 50px;
+        //   }
+        // }

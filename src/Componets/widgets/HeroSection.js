@@ -67,7 +67,7 @@ function HeroSection() {
         renderBullet: (index, className) => {
           
           return (` 
-          <button key=${index} class="${className} fnc-nav__control ${nav_Bg} ">
+          <button key=${index} class="${className} fnc-nav__control mb-2 ${nav_Bg} ">
          ${slideTilte[index]}
           <span class="fnc-nav__control-progress"></span>
         </button>
