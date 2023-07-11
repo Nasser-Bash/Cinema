@@ -80,7 +80,7 @@ function HeroSection() {
     >
 
   
-    {/* <SwiperSlide >
+    <SwiperSlide >
         <div className={`fnc-slide m--blend-green `}>
         <div className="fnc-slide__inner" style={{backgroundImage:`url(images/blackwidow.jpg)`}}>
           <div className="fnc-slide__mask animate__rotateInUpLeft" >
@@ -100,7 +100,7 @@ function HeroSection() {
           </div>
         </div>
         </div>
-      </SwiperSlide> */}
+      </SwiperSlide>
       
 
       <SwiperSlide >
@@ -124,7 +124,7 @@ function HeroSection() {
         </div>
       </SwiperSlide>
       
-        {/* <SwiperSlide >
+        <SwiperSlide >
         <div className={`fnc-slide m--blend-red  `}>
         <div className="fnc-slide__inner" style={{backgroundImage:"url('/images/ironman-alt.jpg')"}}>
           <div className="fnc-slide__mask">
@@ -164,77 +164,12 @@ function HeroSection() {
           </div>
         </div>
         </div>
-      </SwiperSlide> */}
-
+      </SwiperSlide>
 
       </Swiper>
       
  
-      {/* <div className="fnc-slide m--blend-dark ">
-        <div className="fnc-slide__inner">
-          <div className="fnc-slide__mask">
-            <div className="fnc-slide__mask-inner"></div>
-          </div>
-          <div className="fnc-slide__content">
-            <h2 className="fnc-slide__heading">
-              <div className="fnc-slide__heading-line">
-                <span>Captain</span>
-              </div>
-              <div className="fnc-slide__heading-line">
-                <span>America</span>
-              </div>
-            </h2>
-            <button type="button" className="fnc-slide__action-btn">
-              Credits
-              <span data-text="Credits">Credits</span>
-            </button>
-          </div>
-        </div>
-      </div> */}
-   
-      {/* <div className="fnc-slide m--blend-red m--active-slide">
-        <div className="fnc-slide__inner">
-          <div className="fnc-slide__mask">
-            <div className="fnc-slide__mask-inner"></div>
-          </div>
-          <div className="fnc-slide__content">
-            <h2 className="fnc-slide__heading">
-              <div className="fnc-slide__heading-line">
-                <span>Iron</span>
-              </div>
-              <div className="fnc-slide__heading-line">
-                <span>Man</span>
-              </div>
-            </h2>
-            <button type="button" className="fnc-slide__action-btn">
-              Credits
-              <span data-text="Credits">Credits</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="fnc-slide m--blend-blue">
-        <div className="fnc-slide__inner">
-          <div className="fnc-slide__mask">
-            <div className="fnc-slide__mask-inner"></div>
-          </div>
-          <div className="fnc-slide__content">
-            <h2 className="fnc-slide__heading">
-              <div className="fnc-slide__heading-line">
-                <span>Thor</span>
-              </div>
-              <div className="fnc-slide__heading-line">
-                <span>Just Thor</span>
-              </div>
-            </h2>
-            <button type="button" className="fnc-slide__action-btn">
-              Credits
-              <span data-text="Credits">Credits</span>
-            </button>
-          </div>
-        </div>
-      </div> */}
+    
    
     </div>
 </div>
