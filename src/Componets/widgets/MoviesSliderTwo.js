@@ -33,7 +33,7 @@ function MoviesSliderTwo({movies,slidetitle}) {
           }}
         key={diriction}
         modules={[Navigation, Pagination, Mousewheel, Keyboard,Autoplay]}
-        className="mySwiper mb-4 rounded-3"
+        className="mySwiper  rounded-3"
       >
         {
           movies.map((movie)=>{

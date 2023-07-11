@@ -49,7 +49,7 @@ function Filter({moviesType,setdatainput,datainput}) {
     }
  
 
-  useEffect(() => {
+  useEffect(() => { 
     window.onscroll= function () {
       const section = document.querySelector('.mobile-filtirng');
       if ( window.scrollY > section.offsetTop-300  ) {
@@ -86,7 +86,7 @@ function Filter({moviesType,setdatainput,datainput}) {
        
         {years.map((year)=>{
                 return(
-                  <Col md={4} key={year}>
+                  <Col md={6} key={year}>
                 <Form.Check
                         name="year"
                         onChange={(e)=>setslectedYear(e.target.value)}
@@ -113,7 +113,7 @@ function Filter({moviesType,setdatainput,datainput}) {
         <Row style={{width:'400px'}} className="p-2  ">
         {genres.map((genre)=>{
                 return(
-                  <Col md={4} key={genre.id}>
+                  <Col md={6} key={genre.id}>
                 <Form.Check
                         name="genersid"
                         onChange={checkHandler}

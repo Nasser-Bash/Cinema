@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import FeauterdMovies from '../widgets/FeauterdMovies';
 import Filter from "../widgets/Filter";
-import HeroSection from "../widgets/HeroSection";
+import HeroSection2 from "../widgets/HeroSection2";
 import { useDispatch , useSelector } from "react-redux";
 import { types , filtering } from "../../redux/action/MoivesAction";
 import PaginationMovies from "../widgets/pagination";
@@ -26,19 +26,19 @@ function Movietype({searchview}) {
 
       const heroSection = ()=>{
         if(type.lang==="ar"){
-          return (<HeroSection img="arabic.jpg" title={`${t("Arabic Movies")}`} content={t("Find out Arabic Movies")}/>)
+          return (<HeroSection2 img="arabic.jpg" title={`${t("Arabic Movies")}`} content={t("Find out Arabic Movies")}/>)
         } else if (type.lang=== "en"){
-          return (<HeroSection img="hollywood-.jpg" title={`${t("English Movies")}`} content={t("Find out English Movies")}/>)
+          return (<HeroSection2 img="hollywood-.jpg" title={`${t("English Movies")}`} content={t("Find out English Movies")}/>)
         } else if (type.lang=== "ja"){
-          return (<HeroSection img="japanese.jpg" title={`${t("Japanese Movies")}`} content={t("Find out Japanese Movies")}/>)
+          return (<HeroSection2 img="japanese.jpg" title={`${t("Japanese Movies")}`} content={t("Find out Japanese Movies")}/>)
         } else if (type.lang=== "tr"){
-          return (<HeroSection img="turkish.jpg" title={`${t("Turkey Movies")}`} content={t("Find out Turkish Movies")}/>)
+          return (<HeroSection2 img="turkish.jpg" title={`${t("Turkey Movies")}`} content={t("Find out Turkish Movies")}/>)
         } else if (type.lang=== "ko"){
-          return (<HeroSection img="korean.jpg" title={`${t("Korean Movies")}`} content={t("Find out Korean Movies")}/>)
+          return (<HeroSection2 img="korean.jpg" title={`${t("Korean Movies")}`} content={t("Find out Korean Movies")}/>)
         } else if (type.lang=== "hi"){
-          return (<HeroSection img="bollywood.jpg" title={`${t("Hindi Movies")}`} content={t("Find out Indian Movies")}/>)
+          return (<HeroSection2 img="bollywood.jpg" title={`${t("Hindi Movies")}`} content={t("Find out Indian Movies")}/>)
         } else if (type.lang=== "es"){
-          return (<HeroSection img="spanish.jpg" title={`${t("Spanish Movies")}`} content={t("Find out Spanish Movies")}/>)
+          return (<HeroSection2 img="spanish.jpg" title={`${t("Spanish Movies")}`} content={t("Find out Spanish Movies")}/>)
         } 
       }
   return (

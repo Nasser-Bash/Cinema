@@ -35,10 +35,13 @@ useEffect(() => {
     <div className='home text-white'>
       {searchview && (
          <>
-      <HeroSection img="Unlimited movies.jfif" title={t("Unlimited movies Are You Ready ?")} content={t('Find out All Movies')}/>
+         <HeroSection/>
+         <TopRatedMovies type="en"/>
+         
+      <TrendingMovies img="Unlimited movies.jfif" title={t("Unlimited movies Are You Ready ?")} content={t('Find out All Movies')}/>
           <div className="content">
-     <TrendingMovies />
-     <TopRatedMovies type="en"/>
+    
+     
       <Container fluid className='my-5 movies-content '>
         <div className="">
      <Filter  datainput={datainput} setdatainput={setdatainput} />

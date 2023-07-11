@@ -1,10 +1,10 @@
-$maincolor:#212529;
-$thirdcolor:#c292de;
-$fourthcolor:#95a3e0;
+$maincolor:#060d17;
+$thirdcolor:#f1c40f;
+$fourthcolor:#f1c40f;
 $textcolor:white;
 $secondtextcolor:grey;
 %gradiantColor{
- background: rgb(37,42,61);
+  background: #060d17
 
 
 }
@@ -36,6 +36,7 @@ button{
 // import widgets css files 
 @import "./widgets/menu";
 @import "./widgets/hero-section";
+@import "./widgets/hero-section2";
 @import "./widgets/FeauterdMovies";
 @import "./widgets/moviesSlider";
 @import "./widgets/moviesSliderTwo";
@@ -75,4 +76,7 @@ a{
   &:hover{
     color: $secondtextcolor !important;
   }
+}
+.swiper-button-next,.swiper-button-prev{
+  color: $fourthcolor !important;
 }

@@ -1,8 +1,7 @@
 import React ,{useState,useEffect} from 'react'
-import { Col ,Container} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle , faStar } from "@fortawesome/free-solid-svg-icons";
+
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { api } from "../API";
@@ -24,11 +23,11 @@ function FeauterdMovies({movie}) {
     <Col lg={2} md={3} sm={4} xs={6} className="movie-card">
       
     <Link to={`/movie/${movie.id}`}>
-    <Zoom  bottom>
+    
     <div key={movie.id} className='featured-movie mx-auto mb-3'>
       <img src = {api.Image + movie.poster_path} /> 
     </div>
-    </Zoom>
+   
     </Link>
    
     </Col>
