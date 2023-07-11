@@ -1,10 +1,9 @@
 import React from 'react'
-import { Navbar ,Nav } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import { useTranslation } from 'react-i18next';
-function Menu({openSearchBar}) {
+function Menu() {
   const { t, i18n } = useTranslation();
   return (
   

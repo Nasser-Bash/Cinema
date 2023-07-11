@@ -1,12 +1,12 @@
 import React, { useState , useEffect} from 'react';
-import { Col, Container ,Row,Tab , Tabs ,Form,FloatingLabel,Button} from 'react-bootstrap'
+import {  Container ,Row} from 'react-bootstrap'
 import { useParams } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import FeauterdMovies from '../widgets/FeauterdMovies';
 import Filter from "../widgets/Filter";
 import HeroSection2 from "../widgets/HeroSection2";
 import { useDispatch , useSelector } from "react-redux";
-import { types , filtering } from "../../redux/action/MoivesAction";
+import { types  } from "../../redux/action/MoivesAction";
 import PaginationMovies from "../widgets/pagination";
 import { SearchContext } from "../../App";
 import TopRatedMovies from "../widgets/TopRatedMovies";

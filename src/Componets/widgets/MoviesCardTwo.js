@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle , faStar } from "@fortawesome/free-solid-svg-icons";
+import {  faStar } from "@fortawesome/free-solid-svg-icons";
 import { api } from "../API";
 import { Button } from 'react-bootstrap';
 import Zoom from 'react-reveal/Zoom';

@@ -38,7 +38,7 @@ button{
 @import "./widgets/hero-section";
 @import "./widgets/hero-section2";
 @import "./widgets/FeauterdMovies";
-@import "./widgets/moviesSlider";
+
 @import "./widgets/moviesSliderTwo";
 @import "./widgets/pagintaion";
 @import "./widgets/moviesCard";
@@ -58,15 +58,7 @@ body{
  .MuiSelect-select{
   color: $textcolor !important;
  }
-// .loading{
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 2px;
-//   background-color: $thirdcolor;
-// }
+
 .rate-icon{
   color: yellow !important;
 }

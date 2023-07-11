@@ -80,11 +80,11 @@ function HeroSection() {
     >
 
   
-    <SwiperSlide >
+    {/* <SwiperSlide >
         <div className={`fnc-slide m--blend-green `}>
-        <div className="fnc-slide__inner" style={{backgroundImage:`url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/blackwidow.jpg)`}}>
+        <div className="fnc-slide__inner" style={{backgroundImage:`url(images/blackwidow.jpg)`}}>
           <div className="fnc-slide__mask animate__rotateInUpLeft" >
-            <div className="fnc-slide__mask-inner " style={{backgroundImage:`url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/blackwidow.jpg)`}}></div>
+            <div className="fnc-slide__mask-inner " style={{backgroundImage:`url(images/blackwidow.jpg)`}}></div>
           </div>
           <div className="fnc-slide__content">
             <h2 className="fnc-slide__heading">
@@ -100,14 +100,14 @@ function HeroSection() {
           </div>
         </div>
         </div>
-      </SwiperSlide>
+      </SwiperSlide> */}
       
 
       <SwiperSlide >
       <div className={`fnc-slide m--blend-dark  `}>
-        <div className="fnc-slide__inner" style={{backgroundImage:"url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/captainamerica.jpg')"}}>
+        <div className="fnc-slide__inner" style={{backgroundImage:"url('images/captainamerica.jpg')"}}>
           <div className="fnc-slide__mask">
-            <div className="fnc-slide__mask-inner" style={{backgroundImage:"url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/captainamerica.jpg')"}}></div>
+            <div className="fnc-slide__mask-inner" style={{backgroundImage:"url('images/captainamerica.jpg')"}}></div>
           </div>
           <div className="fnc-slide__content">
             <h2 className="fnc-slide__heading">
@@ -124,11 +124,11 @@ function HeroSection() {
         </div>
       </SwiperSlide>
       
-        <SwiperSlide >
+        {/* <SwiperSlide >
         <div className={`fnc-slide m--blend-red  `}>
-        <div className="fnc-slide__inner" style={{backgroundImage:"url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/ironman-alt.jpg')"}}>
+        <div className="fnc-slide__inner" style={{backgroundImage:"url('/images/ironman-alt.jpg')"}}>
           <div className="fnc-slide__mask">
-            <div className="fnc-slide__mask-inner" style={{backgroundImage:"url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/ironman-alt.jpg')"}}></div>
+            <div className="fnc-slide__mask-inner" style={{backgroundImage:"url('/images/ironman-alt.jpg')"}}></div>
           </div>
           <div className="fnc-slide__content">
             <h2 className="fnc-slide__heading">
@@ -147,9 +147,9 @@ function HeroSection() {
 
       <SwiperSlide >
         <div className={`fnc-slide m--blend-blue  `}>
-        <div className="fnc-slide__inner" style={{backgroundImage:"url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/thor.jpg')"}}>
+        <div className="fnc-slide__inner" style={{backgroundImage:"url('/images/thor.jpg')"}}>
           <div className="fnc-slide__mask">
-            <div className="fnc-slide__mask-inner" style={{backgroundImage:"url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/thor.jpg')"}}></div>
+            <div className="fnc-slide__mask-inner" style={{backgroundImage:"url('/images/thor.jpg')"}}></div>
           </div>
           <div className="fnc-slide__content">
             <h2 className="fnc-slide__heading">
@@ -164,7 +164,7 @@ function HeroSection() {
           </div>
         </div>
         </div>
-      </SwiperSlide>
+      </SwiperSlide> */}
 
 
       </Swiper>

@@ -1,8 +1,8 @@
 import React,{ useState , useEffect } from "react";
-import { Form , Container, Row, Button , Dropdown , Col } from 'react-bootstrap'
+import {  Container, Row } from 'react-bootstrap'
 import FeauterdMovies from "../widgets/FeauterdMovies";
 import { useSelector ,useDispatch} from "react-redux";
-import { getAllMovies ,getpage,getgenres,filtering} from "../../redux/action/MoivesAction";
+import { getAllMovies } from "../../redux/action/MoivesAction";
 import PaginationMovies from "../widgets/pagination";
 import TrendingMovies from "../widgets/TrendingMovies";
 import TopRatedMovies from "../widgets/TopRatedMovies";

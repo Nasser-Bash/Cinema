@@ -1,5 +1,5 @@
 import React, { useState , useEffect} from 'react';
-import { Col, Container ,Row,Tab , Tabs ,Form,FloatingLabel,Button} from 'react-bootstrap'
+import { Col, Container ,Row,Tab , Tabs } from 'react-bootstrap'
 import { useParams } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import FeauterdMovies from '../widgets/FeauterdMovies';
@@ -10,14 +10,12 @@ import { getmoviedetaile , getmoviecast , getsimilar , getvideos } from "../../r
 import { api } from "../API";
 import { SearchContext } from "../../App";
 import Zoom from 'react-reveal/Zoom';
-import ReactPlayer from 'react-player'
+
 function MovieDetalies({searchview}) {
-  const [Istutorail, setIstutorail] = useState();
   const id = useParams();
   const applang = useSelector((state)=>state.languages.lang);
   const { t, i18n } = useTranslation();
   const [key, setKey] = useState('Videos');
-  const [videokey, setvideokey] = useState();
   const Dispatch = useDispatch();
      const moviedetails = useSelector((state)=>state.details.details);
      const moviecast = useSelector((state)=>state.casting.cast);

@@ -1,5 +1,5 @@
 import React ,{useState , useEffect}from 'react'
-import {  Container , Form, Navbar ,FloatingLabel } from 'react-bootstrap'
+import {  Container , Navbar  } from 'react-bootstrap'
 import Menu from "../widgets/Menu";
 import { useDispatch } from "react-redux";
 import { searchmovies  , applanguage} from "../../redux/action/MoivesAction";

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { api } from "../API";
-import Zoom from 'react-reveal/Zoom';
+
 function FeauterdMovies({movie}) {
   const [movies, setmovies] = useState([]);
 

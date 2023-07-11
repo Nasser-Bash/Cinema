@@ -1,9 +1,9 @@
-import React , {useEffect,useState} from 'react'
+import React , {useEffect} from 'react'
 import MoviesSliderTwo from "./MoviesSliderTwo";
 import { useTranslation } from 'react-i18next';
 import { useDispatch , useSelector } from "react-redux";
 import { getTopRatedMovies } from "../../redux/action/MoivesAction";
-import HeroSection from "./HeroSection";
+
 function TopRatedMovies(type) {
     const { t, i18n } = useTranslation();
     const Dispatch = useDispatch();
